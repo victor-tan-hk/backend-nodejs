@@ -1,0 +1,77 @@
+
+Create a user account on any MYSQL server with a specified username and password which will later be used by your Express.js app
+Grant full privileges to this user account to create any database and table 
+
+
+CREATE USER 'basicuser'@'%' IDENTIFIED BY 'password'; 
+GRANT ALL ON *.* TO 'basicuser'@'%';
+
+
+Check that the user account has been created successfully with:
+
+SELECT user FROM mysql.user;
+
+Now run the following commands to create a database and table, populate it with content and perform some basic queries on it:
+
+CREATE DATABASE workshopdb;
+
+SHOW DATABASES;
+
+USE workshopdb;
+
+SELECT DATABASE();
+
+CREATE TABLE employees(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) DEFAULT NULL,
+  country VARCHAR(50) DEFAULT NULL,
+	age INT DEFAULT NULL,
+	salary FLOAT DEFAULT NULL 
+);
+
+SHOW TABLES;
+
+
+INSERT INTO employees(name, country, age, salary) 
+VALUES 
+  ('Peter', 'Malaysia', 35, 2700.16),
+  ('James', 'Singapore', 22, 3200.22),
+  ('Ali', 'Indonesia', 27, 5400.00),
+  ('Sally', 'Thailand', 60, 10200.20),
+  ('Muthu', 'Malaysia', 44, 8200.30),
+  ('Emma', 'Singapore', 52, 9500.00),
+  ('Sophia', 'Thailand', 30, 15800.10);
+  
+SELECT * FROM employees;
+
+SELECT id, name, age FROM employees;
+
+SELECT id, country, salary FROM employees;
+
+SELECT * FROM employees ORDER BY age;
+
+SELECT * FROM employees ORDER BY salary desc;
+
+SELECT * FROM employees WHERE age > 40;
+
+SELECT * FROM employees WHERE salary < 9000;
+
+SELECT * FROM employees WHERE country = 'Malaysia';
+
+SELECT * FROM employees WHERE id = 1;
+
+UPDATE employees 
+SET name = 'Spiderman', age = 22, country = 'USA' 
+WHERE id = 1;
+
+SELECT * FROM employees WHERE id = 1;
+
+DELETE FROM employees WHERE id = 3;
+
+SELECT * FROM employees;
+
+DROP TABLE employees;
+
+DROP DATABASE workshopdb;
+
+  

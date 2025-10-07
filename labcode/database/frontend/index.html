@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Employee Management Portal</h1>
+
+  <!-- a) Obtain Employees -->
+  <section>
+    <h2>View All Employees</h2>
+    <button id="getEmployeesBtn">Obtain Employees</button>
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Country</th><th>Age</th><th>Salary</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- b) Add Employee -->
+  <section>
+    <h2>Add New Employee</h2>
+    <form id="addEmployeeForm">
+      <input type="text" id="addName" placeholder="Name" required>
+      <input type="text" id="addCountry" placeholder="Country" required>
+      <input type="number" id="addAge" placeholder="Age" required>
+      <input type="number" id="addSalary" placeholder="Salary" required>
+      <button type="submit">Add Employee</button>
+    </form>
+  </section>
+
+  <!-- c) Update Employee -->
+  <section>
+    <h2>Update Employee</h2>
+    <form id="updateEmployeeForm">
+      <input type="number" id="updateId" placeholder="Employee ID" required>
+      <input type="text" id="updateName" placeholder="Name" required>
+      <input type="text" id="updateCountry" placeholder="Country" required>
+      <input type="number" id="updateAge" placeholder="Age" required>
+      <input type="number" id="updateSalary" placeholder="Salary" required>
+      <button type="submit">Update Employee</button>
+    </form>
+  </section>
+
+  <!-- d) Delete Employee -->
+  <section>
+    <h2>Delete Employee</h2>
+    <form id="deleteEmployeeForm">
+      <input type="number" id="deleteId" placeholder="Employee ID" required>
+      <button type="submit">Delete Employee</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
